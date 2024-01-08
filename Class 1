@@ -1,1 +1,31 @@
+# Deep copy of arbitrary lists
 
+L = [[[[1, 2]], 5]]
+# Shallow Copy of L:
+L2 = L[:] #L2 = L.copy()
+
+# Shallow copy means that L and L2 are separate lists,
+# But the elements of L and L2 are aliases
+
+# Changing L[0] is not the same as changing L2[0], but rather the contents
+# i.e. L[0][0] = 2 makes L2[0][0] = 2
+
+# To create a deep copy of the list L,
+# Make a new list [deepcopy(L[0]), deepcopy(L[1]), ...]
+
+def deepcopy(L):
+    '''return deep copy of L, which is either a list of lists of lists... or an int'''
+    # Base Case
+
+    if type(L) is not list:
+        return L
+
+    # Recursion
+
+    res = []
+    for e in L:
+        if type(e) == list:
+            res.append(deepcopy(e))
+        else:
+            res.append(e)
+    return res
