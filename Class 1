@@ -15,7 +15,7 @@ L2 = L[:] #L2 = L.copy()
 
 def deepcopy(L):
     '''return deep copy of L, which is either a list of lists of lists... or an int'''
-    # Base Case
+    # Base Case only reached if the initial input parameter is not a list
 
     if type(L) is not list:
         return L
@@ -29,3 +29,33 @@ def deepcopy(L):
         else:
             res.append(e)
     return res
+
+
+alphabet = 'abcdefghihklmnopqrstuvwxyz'
+# All rhe length 4 string combonations to be made with an alphabet
+for letter1 in alphabet:
+    for letter2 in alphabet:
+        for letter3 in alphabet:
+            for letter4 in alphabet:
+                print(letter1 + letter2 + letter3 + letter4)
+
+#same thing but with strings length k
+
+def all_strings(k, a):      
+    
+    #base case
+
+    if k==0:
+        return [""]
+
+    res = []
+    all_k1_strings = all_strings(k-1,a)
+
+
+    for letter in a:
+        for string in all_k1_strings:
+            res.append(letter + string)
+    return res
+
+
+# runtime= O(n^k) for k constant
