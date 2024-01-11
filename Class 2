@@ -19,3 +19,12 @@ Low-level langages are more explicit (e.g. C)
 
 ## C: Low-level compiled language
 ## Python: High-level interpreted language
+
+### Types in C
+
+Unlike in Python, every C variable needs to be declared -- you need to pre-specify what type of data is stored in the variable
+Types:
+- int: Integer
+- double: double-precision floating point (like float in Python)
+- char: a character (e.g., '@','b')
+- *type: pointer
