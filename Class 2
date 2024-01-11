@@ -1,0 +1,21 @@
+### Compiled Vs. Interpreted Languages
+
+The PYthon interpreter is itself a program
+-Big picture view: The Python interpreter reads the py file block by block and executes the code line by line
+-Similar to how exec does this inside of a Python program
+
+An alternative: compiled languages
+-The computer hardware can (almost) directly execute instructions like move data
+-Compilers translate human-readable code into computer-readable code
+
+### Low-level vs. High-level languages
+
+High-level languages are more abstract (e.g. Python)
+-We don't spell out everything explicitly (for i in range: ... is abstract)
+
+Low-level langages are more explicit (e.g. C)
+-We have more control over the program and it can be written to be more efficient
+
+
+## C: Low-level compiled language
+## Python: High-level interpreted language
