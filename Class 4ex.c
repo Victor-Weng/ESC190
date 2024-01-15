@@ -14,17 +14,17 @@ int memoryexample()
 {
     int a = 5;
     int *p_a = &a;
-    printf("%d %ld %d %d\n", a, p_a, *p_a, *&p_a); 
+    printf("%d %ld %d %d\n", a, p_a, *p_a, *&p_a);
     // Output: 5 1032 5 2048
     // if at address 1032 there is the value 5, and at address 2048, the pointer to 1032 is stored
 }
 
 int changearr()
 {
-    int a[] = {5,6,7};
+    int a[] = {5, 6, 7};
     a[0] = 6;
-    int*p = a;
-    print("%d %d", a[0], *p); //Output: 6 6
+    int *p = a;
+    print("%d %d", a[0], *p); // Output: 6 6
 }
 
 void f(int *aa)
@@ -37,7 +37,7 @@ int main()
     int a[] = {5, 6, 7};
     a[0] = 6;
     int *p = a;
-    f(a);
+    f(a);                 // calls function that passes in pointer and changes the value
     printf("%d\n", a[0]); // Output: 7
 }
 
