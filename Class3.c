@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main()
-{ //K&R style: curly brace goes on the next line after the function head
+{ // K&R style: curly brace goes on the next line after the function head
 
-    //before we use a variable, we need to declare it
-    //optionally, you can also initialize it (assigning initial value)
+    // before we use a variable, we need to declare it
+    // optionally, you can also initialize it (assigning initial value)
 
     // int a = 5;
     int b; // integer, declared, but not initialized. Almost 100% of the time, you want to initialize it
@@ -29,44 +29,42 @@ int main()
     printf("The integer is : %d\n", a); // prints the number
 
     printf("The string is : %s\n", a); // treats a as an address so we print whatever value is at the memory address
-    //43 which is likely not available
+    // 43 which is likely not available
 
     char c = '@';
 
-    //error: char c1 = '28373738282922';
+    // error: char c1 = '28373738282922';
 
-    //error: char c1 = "abc";
-
-
+    // error: char c1 = "abc";
 
     ///////// Second Part ///////////
 
-    int aa = 42; 
-    int bb; // non-initialized
-    char *c11 = "abc", // string needs to be char* double quotes and char needs to be single quote and just a character
-    // difference between char* ans char:
-    //char* stores the address of where a is, char stores the value of the character
+    int aa = 42;
+    int bb;            // non-initialized
+    char *c11 = "abc"; // string needs to be char* double quotes and char needs to be single quote and just a character
+                       // difference between char* ans char:
+                       // char* stores the address of where a is, char stores the value of the character
 
-    char cc = '@'
+    char cc = '@';
     double dd = 3.14;
 
-    printf("The itneger is : %d\n",aa);
+    printf("The itneger is : %d\n", aa);
     printf("The character is : %c\n", cc);
     printf("The double is : %f\n", dd);
-    printd("The char is : %c\n", cc)
+    printd("The char is : %c\n", cc);
 
     int *p_a = &aa; // p_a is a variable of type int*
     // p_a stores an address of an int
     // &a; the address in the memory table where aa is stores
     // p_a stores the address of aa
 
-    printf("The address of a is %ld\n", p_a); //e.g. 727263737288261
+    printf("The address of a is %ld\n", p_a); // e.g. 727263737288261
 
     // *p_a stores the value stored at the address p_a
 
-    printf("The value of a is: %d\n", *p_a); //e.g. 42
+    printf("The value of a is: %d\n", *p_a); // e.g. 42
     printf("The value of a: %d\n", a);
-    
+
     // addresses of values are referred to as pointers
 
     double x = 12.34;
@@ -74,7 +72,6 @@ int main()
     double y = 25 + *address_of_var_x; // y is 25 + 12.32
 
     // * is USED IN TWO DIFFERENT WAYS
-
 
     char *s1 = "hello!";
     // * is used part of thr type char *
@@ -85,6 +82,4 @@ int main()
     // same thematically by referencing pointers and addresses, but completrly separate uses
 
     return 0;
-
-
 }
