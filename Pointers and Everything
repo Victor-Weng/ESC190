@@ -1,0 +1,96 @@
+C:
+
+Pass Value, not address when passing the variable itself (Think of people shouting numbers accross the room)
+Pass Pointer, think of telling the other person to access that Pointer (address)
+
+============================================================================================================
+Finding types:
+
+&x => address of x (int, char, etc.)
+*x => value at x (pointer)
+
+
+Draw a vertical line:
+
+ex.
+
+int* x ==>   int | *x   so *x is an integer
+Alternatively, int* | x so x is a type int*
+
+int &x ==> int | &x so &x is an integer
+Alternatively, int& | x so x is a type int&
+
+
+So:
+int x  is basically int *&x  "value at the address of x"
+
+
+============================================================================================================
+Think of pages:
+-------------------
+[Page Number (pointer/address)]                          [Variable Name: x]
+
+[Value]
+-------------------
+
+============================================================================================================
+Arrays and Strings:
+
+type vairableName[Number of Slots]:
+
+Ex.:
+
+int arr[5]:  (Finds 5 free consecutive pages and fills them with values)
+
+Exception for the draw a vertical line rule: x here is just *x
+However, can think of the square brackets [] as appending a * to the front of the variable:
+
+x[] => *x    so x[][] ==> **x
+
+Accessing arrays:
+
+arr[0] ==> Go to pointer of arr (first value) and take 0 steps forward (first value)
+
+Writing Strings:
+
+char arr[3] = "hi";
+
+Here, 3 is finding 3 consecutive open pages.
+Saved in memory as: h i 0\  
+0\ is the string end character
+
+When defining strings, always do AT MINIMUM 1 more slot than is in the string for the end string character. Normally, add even more for buffering and other reasons.
+
+When passing an array / string into a function, also pass in the length of the array / string (number of slots)
+
+============================================================================================================
+
+Memory storage: 
+
+Different types take up different bytes (pages) in memory.
+
+Ex. int => 4 and char => 1 page
+
+This is reflected in arrays. So, in actuality, the array is taking up more than "3" pages for int x[3] but rather 3*sizeof(int)
+
+sizeof(type) function returns the amount of "pages" / bytes that is taken up by the type
+
+Hence, alternatively to x[1] to access second element in an array: int x[3],
+you could call *(x + sizeof(int)) or in this case, *(x + 4)
+
+============================================================================================================
+
+Malloc:
+
+Changing address values:
+
+Malloc changes the address value
+
+ex.:
+
+int *y = malloc(3*sizeof(int)) ==> Find me 3 * sizeof(int) pages that are free and consecutive in memory, and return me the ADDRESS of the starting value.
+
+
+
+
+
