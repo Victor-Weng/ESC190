@@ -24,6 +24,15 @@ Alternatively, int& | x so x is a type int&
 So:
 int x  is basically int *&x  "value at the address of x"
 
+    // * is USED IN TWO DIFFERENT WAYS
+
+    char *s1 = "hello!";
+    // * is used part of thr type char *
+
+    char c = *s1; // c is 'h'
+    // * is used as a "dereferencing operator" to get the value at the given address
+
+    // same thematically by referencing pointers and addresses, but completrly separate uses
 
 ============================================================================================================
 Think of pages:
