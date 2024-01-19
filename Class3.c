@@ -48,7 +48,7 @@ int main()
     char cc = '@';
     double dd = 3.14;
 
-    printf("The itneger is : %d\n", aa);
+    printf("The integer is : %d\n", aa);
     printf("The character is : %c\n", cc);
     printf("The double is : %f\n", dd);
     printd("The char is : %c\n", cc);
