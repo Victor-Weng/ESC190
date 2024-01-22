@@ -87,6 +87,9 @@ sizeof(type) function returns the amount of "pages" / bytes that is taken up by 
 Hence, alternatively to x[1] to access second element in an array: int x[3],
 you could call *(x + sizeof(int)) or in this case, *(x + 4)
 
+you can make Structs 
+and do sizeof(struct name) to find how much memory one of your defined structs takes up
+
 ============================================================================================================
 
 Malloc:
@@ -99,7 +102,44 @@ ex.:
 
 int *y = malloc(3*sizeof(int)) ==> Find me 3 * sizeof(int) pages that are free and consecutive in memory, and return me the ADDRESS of the starting value.
 
+=============================================================================================================
+
+Variable manipulation in C and finding the length of a string
+
+x != '\0' is the same as x when treated as a boolean
+in C, A = B is B and has the effect of assigning B to A
+the value of a++ is a AND has the effect of increasing it by 1
+
+Example:
+
+int a = 5 // set a to 5
+int b = 4 //set b to 4
+b = a++ // set b to 5 then set a to 6
 
 
+
+int strlen_short(const char *str)
+{
+    int len = 0;
+    while(*(str++))
+    {
+        len++;
+    }
+    return len;
+}
+
+recursive strlen
+Base Case: *str is '\0' => return 0
+Recursive Step: Return 1 + strlen_rec(str + 1)
+
+int strlen_rec(const char *str)
+{
+    if(*str == '\0') // if the value of the next pointer is '\0'
+    {
+        return 0;
+    }else{
+        return 1 + strlen_rec(str + 1);
+    }
+}
 
 
