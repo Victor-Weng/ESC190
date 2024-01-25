@@ -1,5 +1,4 @@
 // Q1. Define an integer variable a and initialize it to 42
-int a = 42;
 
 // Q2. Define a pointer to an integer variable p_a and initialize it to the address of a
 
