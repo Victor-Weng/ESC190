@@ -27,7 +27,25 @@ typedef struct student
 {
     char name[200];
     int age;
-} student;
+} student; 
+
+/*
+
+typedef is also commonly used with structures
+to avoid having to use the struct keyword when declaring variables. For example:
+
+Now you can declare a Student variable like this:
+
+Student s1;
+
+Instead of like this:
+
+struct Student s1;
+
+Remember, typedef does not create a new type. It only creates a new name for an existing type.
+The compiler treats the new name exactly the same as the original name.
+
+*/
 
 // Sometimes, want to change the value of a pointer inside a function
 

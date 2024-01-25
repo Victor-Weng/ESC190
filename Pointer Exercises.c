@@ -139,12 +139,20 @@ void main()
     // Answer:
 
     printf("%d\n", p_block);
-    q11(p_block);
+    q11(&p_block);
     printf("%d\n", p_block);
 }
 
 // Q21. Create a an object of type student and initialize it
 // Answer:
+
+typedef struct Student
+{
+    char name[100];
+    int age;
+    float grade;
+
+} Student;
 
 // Q22. Change the name of the student to "Jennifer"
 // Answer:
