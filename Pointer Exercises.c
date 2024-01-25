@@ -1,60 +1,147 @@
-// Q1. Define an integer variable a and initialize it to 42
+#include <stdio.h>
+#include <stdlib.h>
 
-// Q2. Define a pointer to an integer variable p_a and initialize it to the address of a
-
-// Q3. Using p_a and without directly using a, change the value of a to 43
-// Answer:
-
-// Q4. Change the value of the pointer p_a to something else. Make sure that the value of a does not change
-// Answer:
+void printarr(int *arr, int sz)
+{
+    for (int i = 0; i < sz; i++)
+    {
+        printf("%d", arr[i]);
+    }
+    printf("\n");
+}
 
 // Q5. Define a function that takes in a pointer to an integer and changes the integer
 // Answer:
 
-// Q6. Call the function from Q5 and pass in the address of a. Make sure that the value of a changes
-// Answer:
+void change_int(int *p_a)
+{
 
-// Q7. Call the function named change_int without directly using a, but using p_a instead
-// Answer:
-
-// Q8. Define a variable that would store the address of p_a
-// Answer:
-
-// Q9. Make p_p_a point to p_a
-// Answer:
+    *p_a = 12;
+}
 
 // Q10. Write a function that takes in a pointer to a pointer to an integer and changes the value of the integer to 46
 // Answer:
 
-// Q11. Write a function that takes in a pointer to a pointer to an integer and changes the value of the pointer to a new address where an integer can be stored. (You will need to use malloc)
+void q10(int **pp)
+{
+    **pp = 46;
+}
+
+// Q11. Write a function that takes in a pointer to a pointer to an integer and
+// changes the value of the pointer to a new address where an integer can be stored.
+// (You will need to use malloc)
 // Answer:
 
-// Q12. Call the function from (10) in order to change the value of a to 46. Do this using p_p_a, and using p_a
+void q11(int **pp)
+{
+    *pp = (int *)malloc(sizeof(int));
+}
+
+// Q16. Write a function that takes in a pointer to the first element of an array of
+// integers and modifies the element at index 2 to 8
 // Answer:
 
-// Q13. Call the function from (11) in order to change the value of p_a to point to a new address. Don't use p_p_a
-// Answer:
+void q16(int *thing)
+{
+    thing[2] = 8;
+}
 
-// Q14. Call the function from (11) in order to change the value of p_a to point to a new address. Use p_p_a
-// Answer:
+void main()
+{
+    // Q1. Define an integer variable a and initialize it to 42
 
-// Q15. Declare an array of integers and initialize it to {5, 6, 7}
-// Answer:
+    int a = 42;
 
-// Q16. Write a function that takes in a pointer to the first element of an array of integers and modifies the element at index 2 to 8
-// Answer:
+    // Q2. Define a pointer to an integer variable p_a and initialize it to the address of a
 
-// Q17. Call the function from (16) in order to change the value of the array from (15)
-// Answer:
+    int *p_a = &a;
 
-// Q18. Create a malloc-allocated block of memory that can store 3 integers. Store it in the variable p_block. Then use change_arr to change the value at index 2
-// Answer:
+    // Q3. Using p_a and without directly using a, change the value of a to 43
+    // Answer:
 
-// Q19. Use change_int from (5) to change the value of the integer stored in the block of memory from (18)
-// Answer:
+    *p_a = 43;
 
-// Q20. Use change_int_ptr from (11) to change the value of p_block to point to a new address
-// Answer:
+    // Q4. Change the value of the pointer p_a to something else. Make sure that the value of a does not change
+    // Answer:
+
+    int b = 43;
+    p_a = &b;
+
+    // Q6. Call the function from Q5 and pass in the address of a. Make sure that the value of a changes
+    // Answer:
+
+    printf("%d\n", *p_a);
+    change_int(&a);
+    printf("%d\n", *p_a);
+
+    // Q7. Call the function named change_int without directly using a, but using p_a instead
+    // Answer:
+
+    change_int(p_a);
+
+    // Q8. Define a variable that would store the address of p_a
+    // Answer:
+
+    // Q9. Make p_p_a point to p_a
+    // Answer:
+
+    int **pp_a = &p_a;
+
+    // Q12. Call the function from (10) in order to change the value of a to 46. Do this using p_p_a, and using p_a
+    // Answer:
+
+    q10(pp_a);
+    printf("%d\n", *p_a);
+
+    // Q13. Call the function from (11) in order to change the value of p_a to point to a new address. Don't use p_p_a
+    // Answer:
+
+    printf("%d\n", p_a);
+    q11(&p_a);
+    printf("%d\n", p_a);
+
+    // Q14. Call the function from (11) in order to change the value of p_a to point to a new address. Use p_p_a
+    // Answer:
+
+    printf("%d\n", p_a);
+    q11(pp_a);
+    printf("%d\n", p_a);
+
+    // Q15. Declare an array of integers and initialize it to {5, 6, 7}
+    // Answer:
+
+    int arr[] = {5, 6, 7};
+
+    // Q17. Call the function from (16) in order to change the value of the array from (15)
+    // Answer:
+
+    printarr(arr, 3);
+    q16(arr);
+    printarr(arr, 3);
+
+    // Q18. Create a malloc-allocated block of memory that can store 3 integers.
+    // Store it in the variable p_block. Then use change_arr to change the value at index 2
+    // Answer:
+
+    int *p_block = (int *)malloc(3 * sizeof(int));
+    printarr(p_block, 3);
+    q16(p_block);
+    printarr(p_block, 3);
+
+    // Q19. Use change_int from (5) to change the value of the integer stored in the
+    // block of memory from (18)
+    // Answer:
+
+    change_int(p_block);
+    printarr(p_block, 3);
+
+    // Q20. Use change_int_ptr from (11) to change the value of p_block to point to a new address
+    // Answer:
+
+    printf("%d\n", p_block);
+    q11(p_block);
+    printf("%d\n", p_block);
+}
 
 // Q21. Create a an object of type student and initialize it
 // Answer:
