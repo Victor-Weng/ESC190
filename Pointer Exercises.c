@@ -46,6 +46,32 @@ void q16(int *thing)
     thing[2] = 8;
 }
 
+// Q21. Create a an object of type student and initialize it
+// Answer:
+
+typedef struct student
+{
+    char name[100];
+    int age;
+
+} student;
+
+// Q27. Create a function that takes in a pointer to a student and changes the name to "Jenny"
+// Answer:
+
+void toJenny(student *p_s)
+{
+    strcpy((*p_s).name = "Jenny");
+}
+
+// Q28. Create a function that takes in a pointer to a student and changes the age to 20
+// Answer:
+
+void to20(student *p_s)
+{
+    (*p_s).age = 20;
+}
+
 void main()
 {
     // Q1. Define an integer variable a and initialize it to 42
@@ -141,54 +167,63 @@ void main()
     printf("%d\n", p_block);
     q11(&p_block);
     printf("%d\n", p_block);
+
+    // Q22. Change the name of the student to "Jennifer"
+    // Answer:
+
+    student s1;
+
+    strcpy(s1.name, 'Jennifer'); // Need to use strcpy() because arrays in C are not assignable
+
+    // Q23. Change the age of the student to 21
+    // Answer:
+
+    s1.age = 21; // this is ok because integers are not arrays so are assignable
+
+    // Q24. Create a pointer p_s to the student and initialize it to the address of the student
+    // Answer:
+
+    student *p_s = &s1; // type student pointer
+
+    // Q25. Change the name of the student to "Jenny", using p_s
+    // Answer:
+
+    // need to use strcpy again because changing array
+
+    strcpy((*p_s).name, "Jenny");
+    // so p_s is a student* which is equal to &s1, which is why *p_s is equal to *&s1 which is s1
+
+    // Q26. Change the age of the student to 20, using p_s
+    // Answer:
+
+    (*p_s).age = 20;
+
+    // Q29. Call the function from (27) in order to change the name of the student to "Jenny". Use p_s but not s
+    // Answer:
+
+    toJenny(p_s);
+
+    // Q30. Call the function from (28) in order to change the age of the student to 20. Use s but not p_s
+    // Answer:
+
+    to20(&s1);
+
+    // Q31. Create an array of 5 student objects
+    // Answer:
+
+    student arr[5];
+
+    // Q32. Use the functions from change_name and change_age on the element at index 2 of the array
+    // Answer:
+
+    toJenny(arr + 1);
+    toAge(arr + 1);
+
+    // Q33. Create a malloc-allocated block of memory that can store 5 students. Store it in the variable p_block_s
+    // Answer:
+
+    student* p_block_s = malloc(5 * sizeof(student));
 }
-
-// Q21. Create a an object of type student and initialize it
-// Answer:
-
-typedef struct Student
-{
-    char name[100];
-    int age;
-    float grade;
-
-} Student;
-
-// Q22. Change the name of the student to "Jennifer"
-// Answer:
-
-// Q23. Change the age of the student to 21
-// Answer:
-
-// Q24. Create a pointer p_s to the student and initialize it to the address of the student
-// Answer:
-
-// Q25. Change the name of the student to "Jenny", using p_s
-// Answer:
-
-// Q26. Change the age of the student to 20, using p_s
-// Answer:
-
-// Q27. Create a function that takes in a pointer to a student and changes the name to "Jenny"
-// Answer:
-
-// Q28. Create a function that takes in a pointer to a student and changes the age to 20
-// Answer:
-
-// Q29. Call the function from (27) in order to change the name of the student to "Jenny". Use p_s but not s
-// Answer:
-
-// Q30. Call the function from (28) in order to change the age of the student to 20. Use s but not p_s
-// Answer:
-
-// Q31. Create an array of 5 student objects
-// Answer:
-
-// Q32. User the functions from change_name and change_age on the element at index 2 of the array
-// Answer:
-
-// Q33. Create a malloc-allocated block of memory that can store 5 students. Store it in the variable p_block_s
-// Answer:
 
 // Q34. Make a function that takes in a pointer to an address of student, and sets that pointer to point to a new address where a student can be stored
 // Answer:
