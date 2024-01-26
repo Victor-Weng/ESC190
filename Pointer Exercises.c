@@ -61,7 +61,7 @@ typedef struct student
 
 void toJenny(student *p_s)
 {
-    strcpy((*p_s).name = "Jenny");
+    strcpy((*p_s).name, "Jenny");
 }
 
 // Q28. Create a function that takes in a pointer to a student and changes the age to 20
@@ -70,6 +70,15 @@ void toJenny(student *p_s)
 void to20(student *p_s)
 {
     (*p_s).age = 20;
+}
+
+// Q34. Make a function that takes in a pointer to an address of student, and sets that pointer
+// to point to a new address where a student can be stored
+// Answer:
+
+void q34(student **p_s)
+{
+    *p_s = malloc(1 * sizeof(student));
 }
 
 void main()
@@ -222,11 +231,8 @@ void main()
     // Q33. Create a malloc-allocated block of memory that can store 5 students. Store it in the variable p_block_s
     // Answer:
 
-    student* p_block_s = malloc(5 * sizeof(student));
+    student *p_block_s = malloc(5 * sizeof(student));
 }
-
-// Q34. Make a function that takes in a pointer to an address of student, and sets that pointer to point to a new address where a student can be stored
-// Answer:
 
 // Q35. Call the function from (34) in order to change the value of p_block_s to point to a new address
 // Answer:
