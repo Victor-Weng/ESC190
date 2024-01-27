@@ -81,6 +81,30 @@ void q34(student **p_s)
     *p_s = malloc(1 * sizeof(student));
 }
 
+// Q40. Write a function that takes in a pointer to the first element of a block of addresses
+// of students, and changes the name of the student at index 2 to "Jenny"
+// Answer:
+
+void q40(student **pp)
+{
+    strcpy(*(*pp + 2).name, "Jenny");
+    // or
+    strcpy((*pp + 2)->name, "Jenny");
+}
+
+// Q43. Write a function that takes in the first address
+// of a student in a block of addresses of students, and changes the name of the student at index 2 to "Jenny"
+// Answer:
+
+void q43(student *p)
+{
+    strcpy((*p + 2).name, "Jenny");
+    // or
+    strcpy((p + 2)->name, "Jenny");
+    // or
+    strcpy(p[2].name, "Jenny");
+}
+
 void main()
 {
     // Q1. Define an integer variable a and initialize it to 42
@@ -232,37 +256,57 @@ void main()
     // Answer:
 
     student *p_block_s = malloc(5 * sizeof(student));
+
+    // Q35. Call the function from (34) in order to change the value of p_block_s to point to a new address
+    // Answer:
+
+    q34(&p_block_s);
+
+    // Q36. Call the function from (27) in order to change the name of the student at index 2 of the block of memory
+    // from (33). Use p_block_s
+    // Answer:
+
+    q27(p_block_s + 2);
+
+    // Q37. Create a variable p_p_s to store the address of p_block_s
+    // Answer:
+
+    student **p_p_s = &p_block_s;
+
+    // Q38. Without calling any function except strcpy, and using only p_p_s, change the name of
+    // the student at index 2 to "Jennifer"
+    // Answer:
+
+    strcpy((*(*p_p_s + 2)).name, "Jennifer");
+    // or
+    strcpy((*p_p_s + 2)->name, "Jennifer");
+
+    // Q39. In the name of the second student in the block pointed to by p_p_s,
+    // change the first letter to 'j' Propose four valid to do that with one line that don't involve calling a function
+    // Answer:
+
+    ((*p_p_s)[1]).name[0] = 'j';
+    (*p_p_s + 1)->name[0] = 'j';
+    (*(*p_p_s + 1)).name[0] = 'j';
+    p_p_s[0][1].name[0] = 'j';
+
+    // Q41. Call the function from (40) in order to change the name of the student at index 2. Use p_block_s
+    // Answer:
+
+    q40(&p_block_s);
+
+    // Q42. Call the function from (40) in order to change the name of the student at index 2. Use p_p_s
+    // Answer:
+
+    q40(p_p_s);
+
+    // Q44. Call the function from (43) in order to change the name of the student at index 2. Use p_block_s
+    // Answer:
+
+    q43(p_block_s);
+
+    // Q45. Call the function from (43) in order to change the name of the student at index 2. Use p_p_s
+    // Answer:
+
+    q43(*p_p_s);
 }
-
-// Q35. Call the function from (34) in order to change the value of p_block_s to point to a new address
-// Answer:
-
-// Q36. Call the function from (27) in order to change the name of the student at index 2 of the block of memory from (33). Use p_block_s
-// Answer:
-
-// Q37. Create a variable p_p_s to store the address of p_block_s
-// Answer:
-
-// Q38. Without calling any function except strcpy, and using only p_p_s, change the name of the student at index 2 to "Jennifer"
-// Answer:
-
-// Q39. In the name of the second student in the block pointed to by p_p_s, change the first letter to 'j' Propose four valid to do that with one line that don't involve calling a function
-// Answer:
-
-// Q40. Write a function that takes in a pointer to the first element of a block of addresses of students, and changes the name of the student at index 2 to "Jenny"
-// Answer:
-
-// Q41. Call the function from (40) in order to change the name of the student at index 2. Use p_block_s
-// Answer:
-
-// Q42. Call the function from (40) in order to change the name of the student at index 2. Use p_p_s
-// Answer:
-
-// Q43. Write a function that takes in the first address of a student in a block of addresses of students, and changes the name of the student at index 2 to "Jenny"
-// Answer:
-
-// Q44. Call the function from (43) in order to change the name of the student at index 2. Use p_block_s
-// Answer:
-
-// Q45. Call the function from (43) in order to change the name of the student at index 2. Use p_p_s
-// Answer:
