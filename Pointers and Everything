@@ -143,3 +143,12 @@ int strlen_rec(const char *str)
 }
 
 
+
+======================================================================
+HEADER FILES:
+
+CAN ADD HEADER FILES .h USE #include "filename.h" or #include <full path> if not in the same working directory
+
+Use to store structs and other information to be used in the code
+
+
