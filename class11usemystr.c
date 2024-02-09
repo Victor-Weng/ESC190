@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "class11.h"
+#include "class11.c"
 
 int main()
 {
