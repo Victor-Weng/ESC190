@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Victo/Desktop/ESC190/ESC190/ESC190",
-      "program": "c:/Users/Victo/Desktop/ESC190/ESC190/ESC190/build/Debug/outDebug",
+      "cwd": "c:/Users/Victo/Desktop/ESC190/ESC190",
+      "program": "c:/Users/Victo/Desktop/ESC190/ESC190/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
